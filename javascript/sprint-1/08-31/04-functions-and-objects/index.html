@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Functions
+
+        function func1() {
+            // body
+        };
+
+        let func2 = function(param1,param2) {
+            // body
+        };
+
+        let func3 = (x,y) => (x + y);
+
+        // 2. Objects
+
+        const obj = {
+            key: null,
+            key2: 'value2',
+            key3: 100,
+        };
+
+        alert(obj.key);
+
+        obj.key4 = 101;
+
+        alert(obj.key4);
+
+        const obj2 = [
+            {firstName: 'Ben', lastName: 'Huinda'},
+            {firstName: 'Huinda', lastName: 'Ben'},
+        ];
+
+        alert(obj2[0].firstName);
+        alert(obj2[1].lastName);
+
+        // 3. Built-in Objects
+
+        alert(`The current date and time is ${Date()}.`);
+
+        // 4. Post-Viewing Practice
+
+        let adder = (a,b) => (a + b);
+
+        const adderObject = [
+            {number: 1},
+            {number: 2},
+            {number: 3},
+            {number: 4},
+        ]
+
+        alert(adder(adderObject[0].number,adderObject[1].number));
+        alert(Math.sqrt(adder(adderObject[2].number,adderObject[3].number)));
+
+    </script>
+</body>
+</html>

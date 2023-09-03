@@ -1,0 +1,1 @@
+Arrow functions were really wacky to me. Their syntax and readability is awkward, but as the article puts it, once you adjust it's often quicker and more intuitive than normal function expressions. I am still working on understanding the implications of the syntax involved, especially for complex arrow functions that have more than one step.

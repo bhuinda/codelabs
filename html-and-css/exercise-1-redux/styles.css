@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+/* Banner */
+#banner{
+    display: flex;
+    position: relative;
+}
+
+#banner img{
+    width: 100%;
+}
+
+#banner h1{
+    color: white;
+    font-size: 100px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+}
+
+/* Navbar */
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: darkcyan;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    padding: 12px 24px;
+}
+
+nav a:hover{
+    color: cyan;
+}
+
+/* Cards */
+
+#column{
+    display: flex;
+    text-align: center;
+}
+
+#about-me, #contact{
+    width: 25%;
+}
+
+#main-content{
+    width: 50%;
+}
+
+#about-me, #main-content, #contact{
+    margin: 4px;
+    border: solid 1px;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-display{
+    position: relative;
+    min-width: 100%;
+}
+
+.card-display img{
+    width: 100%;
+    border: solid 1px;
+}
+
+.card-display h3{
+    color: black;
+    font-size: 10px;
+    width: 100%;
+    position: absolute;
+    top: 5%;
+}
+
+.card{
+    margin: 6px;
+    padding: 6px;
+}
+
+#about-me .card-display h3{
+    display: none;
+}
+
+#about-me .card-container{
+    display: block;
+}
+
+#contact-container{
+    margin: 16px;
+    padding: 8px;
+    border: solid 1px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px){
+    .card-container {
+        display: block;
+    }
+    #contact-container{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px){
+    #banner h1{
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    #banner h1{
+        display: none;
+    }
+}

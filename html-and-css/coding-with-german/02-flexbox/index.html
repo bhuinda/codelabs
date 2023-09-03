@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            margin:0px;
+        }
+
+        .column {
+            float: left;
+        }
+
+        .sidebar {
+            width: 25%;
+        }
+
+        .main-content {
+            width: 50%;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+        }
+        
+        .container-cards{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        .container-cards img{
+            width: 100%;
+        }
+
+        .card{
+            max-width: 33%;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        /* 768px and below */
+        @media screen and (max-width: 768px){
+            .column, .sidebar, .main-content {
+                float: none;
+                width: 100%;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .card {
+                padding: 20px;
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        /* 480px and below */
+        @media screen and (max-width: 480px){
+            .card{
+                max-width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column sidebar">
+            <h2>Sidebar 1</h2>
+            <p>wadpasldasd</p>
+        </div>
+        <div class="column main-content">
+            <h2>wadasdasd</h2>
+            <p>wadopkasd</p>
+        </div>
+        <div class="column sidebar">
+            <h2>wadopaksd</h2>
+            <p>waopdkasd</p>
+        </div>
+    </div>
+    <div class="container-cards">
+        <div class="card">
+            <img src="https://images.pexels.com/photos/3584430/pexels-photo-3584430.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+            <h2>Card 1</h2>
+            <p>wadasdasd</p>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?cs=srgb&dl=pexels-paul-voie-2627945.jpg&fm=jpg" alt="">
+            <h2>Card 2</h2>
+            <p>wadasdasd</p>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/3584430/pexels-photo-3584430.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+            <h2>Card 3</h2>
+            <p>wadasdasd</p>
+        </div>
+    </div>
+</body>
+</html>

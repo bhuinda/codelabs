@@ -1,0 +1,74 @@
+/* header */
+header .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .banner-title {
+    margin: auto;
+    font-size: 60px;
+    color: white;
+    position: absolute;
+}
+
+header nav {
+    text-align: center;
+    background-color: darkcyan;
+    padding: 10px;
+}
+
+header nav a {
+    padding-right: 5%;
+    padding-left: 5%;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    transition: font-size 0.5s;
+}
+
+header nav a:hover {
+    color: cyan;
+    font-size: 22px;
+    transition: font-size 0.5s;
+}
+
+/* add differentiator for active page using JS*/
+/* prevent navbar from expanding on hover by separating background into separate class?*/
+
+/* main */
+main {
+    display: flex;
+    text-align: center;
+    padding: 1px;
+    color: white;
+    background-color: black;
+}
+
+.column {
+    float: left;
+}
+
+.sidebar {
+    width: 25%;
+}
+
+.main-content {
+    width: 50%;
+}
+
+/* footer */
+footer {
+    padding: 1px;
+    background-color: darkcyan;
+}
+
+footer p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+/*@media screen and (max-width: 768px) {
+
+}

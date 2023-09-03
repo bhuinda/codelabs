@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .column {
+            float: left;
+        }
+
+        .sidebar {
+            width: 25%;
+        }
+
+        .main-content {
+            width: 50%;
+        }
+
+        .container {
+            text-align: center;
+        }
+        /* 768px and below */
+        @media screen and (max-width: 768px){
+            .column, .sidebar, .main-content {
+                float: none;
+                width: 100%;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column sidebar">
+            <h2>Sidebar 1</h2>
+            <p>wadpasldasd</p>
+        </div>
+        <div class="column main-content">
+            <h2>wadasdasd</h2>
+            <p>wadopkasd</p>
+        </div>
+        <div class="column sidebar">
+            <h2>wadopaksd</h2>
+            <p>waopdkasd</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+I initially struggled to wrap my head around what exactly objects are useful for, but now I have a decent grasp on them. For a side project, I had to implement a few objects in Python and got them to work but this course is the first time I've understood them fundamentally.

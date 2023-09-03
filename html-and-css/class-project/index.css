@@ -1,0 +1,12 @@
+body {
+    --main-color: rgb(0, 0, 0);
+}
+
+h1 {
+    color: var(--main-color);
+    text-align: center;
+}
+
+h2 {
+    text-decoration: underline;
+}

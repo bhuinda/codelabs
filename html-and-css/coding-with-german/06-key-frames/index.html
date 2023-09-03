@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0px;
+        }
+        .column {
+            float: left;
+        }
+
+        .sidebar {
+            width: 25%;
+        }
+
+        .main-content {
+            width: 50%;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+        }
+        
+        .container-cards{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        .container-cards img{
+            width: 100%;
+        }
+
+        .card{
+            max-width: 33%;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: background 1s;
+            animation: slideFromLeft 1s forwards;
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        .card:hover{
+            background:gray;
+            opacity: 70%;
+            cursor: pointer;
+            transition: background 1s;
+        }
+
+        @keyframes slideFromLeft{
+            0%{
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            75%{
+                transform: translateX(-85%);
+                opacity: 0.85;
+            }
+
+            100%{
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .card:nth-child(1){
+            animation-delay: .3s;
+        }
+
+        .card:nth-child(2){
+            animation-delay: .6s;
+        }
+
+        .card:nth-child(3){
+            animation-delay: .9s;
+        }
+
+        .card-image{
+            position: relative;
+        }
+
+        .card-title{
+            position: absolute;
+            top: 0;
+            left: 10px;
+            color: white;
+            z-index: 1;
+        }
+
+        .overlay{
+            background: black;
+            opacity: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        @media screen and (max-width: 1200px){
+            .card {
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        /* 768px and below */
+        @media screen and (max-width: 768px){
+            .column, .sidebar, .main-content {
+                float: none;
+                width: 100%;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+
+        /* 480px and below */
+        @media screen and (max-width: 480px){
+            .card{
+                max-width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column sidebar">
+            <h2>Sidebar 1</h2>
+            <p>wadpasldasd</p>
+        </div>
+        <div class="column main-content">
+            <h2>wadasdasd</h2>
+            <p>wadopkasd</p>
+            <div class="container-cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/3584430/pexels-photo-3584430.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                        <h2 class="card-title">Card 1</h2>
+                        <div class="overlay"></div>
+                    </div>
+                    <p>wadasdasd</p>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?cs=srgb&dl=pexels-paul-voie-2627945.jpg&fm=jpg" alt="">
+                        <h2 class="card-title">Card 2</h2>
+                        <div class="overlay"></div>
+                    </div>
+                    <p>wadasdasd</p>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/3584430/pexels-photo-3584430.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                        <h2 class="card-title">Card 3</h2>
+                        <div class="overlay"></div>
+                    </div>
+                    <p>wadasdasd</p>
+                </div>
+            </div>
+        </div>
+        <div class="column sidebar">
+            <h2>wadopaksd</h2>
+            <p>waopdkasd</p>
+        </div>
+    </div>
+</body>
+</html>
