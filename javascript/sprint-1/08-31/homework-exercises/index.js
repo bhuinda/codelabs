@@ -68,27 +68,25 @@ userInfoButton.onclick = function() {
 }
 
 // Exercise 12
-const keysAndValues = [
-    { a: 1 },
-    { b: 2 },
-    { c: 3 },
-]
+const keysAndValues = {
+    a: 1,
+    b: 2,
+    c: 3,
+}
 
 function keyAndValueSeparator(obj) {
-    obj.keys = [];
-    obj.values = [];
+    keysArray = [];
+    valuesArray = [];
     
     for (let key in obj) {
         if (obj.hasOwnProperty(key)) {
-            obj.keys.push(key);
-            obj.values.push(obj[key]);
+            keysArray.push(key);
+            valuesArray.push(obj[key]);
         }
     }
-    for (let key of obj.keys) {
-        delete obj[key];
-    }
-    console.log(obj.keys);
-    console.log(obj.values);
+
+    console.log(keysArray);
+    console.log(valuesArray);
 }
 
 keyAndValueSeparator(keysAndValues);
@@ -96,25 +94,75 @@ keyAndValueSeparator(keysAndValues);
 // Exercise 13
 let wordReverser = forwardInput => console.log(forwardInput.split('').reverse().join(''));
 
-wordReverser('heladpaskd asodkpasdpokasd');
+wordReverser('This is backwards.');
 
 // Exercise 14
-let checkIfBalanced = weirdString => console.log(weirdString);
 
-//checkIfBalanced('(', ')', ', ', '[' and ']');
+function checkIfBalanced(weirdString) {
+    let stack = [];
+  
+    for (let i of weirdString) {
+      if (i == '(' || i == '[' || i == '{') {
+        stack.push(i);
+      } else if (i == ')' || i == ']' || i == '}') {
+        if (stack.length === 0) {
+          return false;
+        }
+        let check = stack.pop();
+        if (
+          (i === ')' && check !== '(') ||
+          (i === ']' && check !== '[') ||
+          (i === '}' && check !== '{')
+        ) {
+          return false;
+        }
+      }
+    }
+    return stack.length === 0;
+  }
+
+if (checkIfBalanced(prompt('Enter a string of parantheses to check if balanced:'))) console.log('Balanced');
+else console.log ('Not balanced');
 
 
 // Exercise 15
 
+// THIS WORKS AS WELL
+// function checkIfAnagram(str1, str2) {
+//     const array1 = str1.split('');
+//     const array2 = str2.split('');
+//     if (array1.length !== array2.length) {
+//         console.log(`${str1} and ${str2} are not anagrams.`);
+//     } else {
+//         if (array1.every((element) => array2.includes(element))) {
+//             console.log(`${str1} and ${str2} are anagrams.`);
+//         } else {
+//             console.log(`${str1} and ${str2} are not anagrams.`);
+//         }
+//     }
+// }
+
+function checkIfAnagram(str1,str2) {
+    const arr1 = str1.split('');
+    const arr2 = str2.split('');
+    if (arr1.length === arr2.length && arr1.every((element) => arr2.includes(element))) {
+        console.log(`${str1} and ${str2} are anagrams.`);
+    } else {
+        console.log(`${str1} and ${str2} are not anagrams.`);
+    }
+};
+
+checkIfAnagram('silent','listen');
+
 // Exercise 16
 
-function fizzbuzzer() {
-    for (i = 1; i <= 100; i++) {
-        if (i % 3 && i % 5 == 0) {
+function fizzbuzzer(n = 100) {
+    for (i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
             console.log('FizzBuzz');
-        } else if (i % 3 == 0) {
+        } else if (i % 3 === 0) {
             console.log('Fizz');
-        } else if (i % 5 == 0) {
+        } else if (i % 5 === 0) {
             console.log('Buzz');
         } else {
             console.log(i);
@@ -122,4 +170,21 @@ function fizzbuzzer() {
     }
 };
 
-fizzbuzzer(100);
+console.groupCollapsed('Fizzbuzzer');
+fizzbuzzer();
+console.groupEnd();
+
+// Exercise 17
+
+function checkIfPalindrome(input) {
+    const cleanedString = input.replace(/\s/g,'').toLowerCase();
+    const cleanedStringReversed = cleanedString.split('').reverse().join('');
+    if (cleanedString !== cleanedStringReversed) {
+            console.log(`${input} is not a palindrome.`);
+        }
+    console.log(`${input} is a palindrome.`);
+}
+
+checkIfPalindrome('racecar');
+
+// Exercise 18 is same as 13???
