@@ -27,3 +27,32 @@ if(true) {
 console.log(game);
 
 // The code will log 'Mario' and then log 'Sonic', because, again, the game variables are assigned to separate references because of their scopes.
+
+// #40 Understanding JS Hoisting
+// Exercise 1
+
+book('The Magician\'s Nephew');
+
+function book(title) {
+    console.log(`The book is called ${title}`);
+}
+
+// The code will log "The book is called The Magician's Nephew" because the function declaration is hoisted to the top.
+
+// Exercise 2
+
+// console.log(book2);
+
+// let book2 = 'The Silver Chair';
+
+// The code will throw an exception error because the book function is being initialized, not declared. To fix, "let book" would have to change to "function book()" so that it's properly hoisted.
+
+// Extra Exercises
+
+// Example of Var Advantage
+
+console.log(greeting);
+
+var greeting = 'hi';
+
+// Does not throw an exception, instead returning "undefined" because variable "greeting" has been declared and hoisted, but its initialized value "hi" is not hoisted. "let" and "const" are treated strictly as initializations and thus would throw an exception.
