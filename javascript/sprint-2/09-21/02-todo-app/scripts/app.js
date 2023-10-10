@@ -19,7 +19,7 @@ function createTodo(e) {
     const title = todoInput.value;
     const todo = {
         title: title,
-        complete: false
+        completed: false
     };
     todos.push(todo);
     
@@ -32,19 +32,27 @@ function createTodo(e) {
 }
 
 function modifyTodo(e) {
+    const index = e.target.parentNode.dataset.id;
     if (e.target.matches('.remove-icon')) {
-        const index = e.target.parentNode.dataset.id;
         todos.splice(index, 1);
         fillTodoList(todos);
         storeTodos(todos);
     }
+
     if (e.target.matches('.complete-icon')) {
         if (e.target.parentNode.classList.contains('completed')) {
             e.target.parentNode.classList.remove('completed');
+            todos[index].completed = false;
+
+            storeTodos(todos);
             updatePending();
             return;
         }
+        
         e.target.parentNode.classList.add('completed');
+        todos[index].completed = true;
+
+        storeTodos(todos);
         updatePending();
     }
     else return;
@@ -53,15 +61,15 @@ function modifyTodo(e) {
 function removeAllTodos(e) {
     if (!e.target.matches('.list-clear')) return;
 
-    localStorage.removeItem('todos');
     todos = [];
+    storeTodos(todos);
     fillTodoList(todos);
 }
 
 function fillTodoList(todos = []) {
     const todoHtml = todos.map((todo, i) => {
         return `
-            <div class="list-item" data-id="${i}">
+            <div class="list-item ${todo.completed ? 'completed' : ''}" data-id="${i}">
                 <button class="complete-icon"><img src="/assets/images/checkmark.png"></button>
                 <div class="title">${todo.title}</div>
                 <button class="remove-icon"><img src="/assets/images/trash.png"></button>
