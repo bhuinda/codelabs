@@ -1,7 +1,5 @@
 // Builder Pattern
 
-// OG Way
-
 class Address {
     constructor(zip, street) {
         this.zip = zip

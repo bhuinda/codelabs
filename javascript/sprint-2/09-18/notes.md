@@ -1,0 +1,1 @@
+Lots of really cool practical applications here. Manipulating the DOM is straightforward, but the learning curve is steep. Only really really really big special takeaway is that constant client-side updates, e.g. the scrolling progress indicator, should be "debounced" with a helper function from a library like jQuery to prevent undue lag.

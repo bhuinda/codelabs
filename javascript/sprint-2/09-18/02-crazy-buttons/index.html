@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body, .jumbotron { padding: 30px }
+        .text-giant { font-size: 40px }
+        .btn-crazy {
+            position: absolute;
+            top: 30px;
+            left: 35%;
+            width: 25%;
+            transition: 1s ease all;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <button type="button" class="btn-crazy btn btn-lg btn-danger">
+        Click Me!
+    </button>
+    <button type="button" class="btn-crazy btn btn-lg btn-primary">
+        Click Me!
+    </button>
+    <button type="button" class="btn-crazy btn btn-lg btn-success">
+        Click Me!
+    </button>
+
+    <script>
+
+        const crazyButtons = document.querySelectorAll('.btn-crazy');
+
+        function goCrazy() {
+
+            const offsetLeft = Math.random() * (window.innerWidth - this.clientWidth);
+            const offsetTop = Math.random() * (window.innerHeight - this.clientHeight);
+
+            this.style.top = offsetTop + 'px';
+            this.style.left = offsetLeft + 'px';
+        }
+
+        crazyButtons.forEach(button => button.addEventListener('mouseenter', goCrazy));
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const storedValues = [];
+
+        function square(n) {
+            if (storedValues[n] != null) {
+                return storedValues[n]
+            }
+            let result = 0
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= n; j++) {
+                    result += 1;
+                }
+            }
+            storedValues[n] = result;
+            return result;
+        }
+
+        let start = Date.now();
+        console.log(square(30000));
+        let end = Date.now();
+        console.log(`Execution time: ${end - start} ms`); // ~500 ms execution time
+
+        start = Date.now();
+        console.log(square(30000));
+        end = Date.now();
+        console.log(`Execution time: ${end - start} ms`); // 0 ms execution time (due to memoization)
+
+    </script>
+</body>
+</html>
