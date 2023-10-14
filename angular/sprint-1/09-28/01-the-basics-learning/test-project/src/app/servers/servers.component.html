@@ -1,0 +1,44 @@
+<label>Server Name</label>
+
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName">
+<p>{{ serverName }}</p>
+
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()">Click me to add server.
+</button>
+
+<p *ngIf="isServerCreated; else noServer">{{ serverCreationStatus }}</p>
+<ng-template #noServer>
+  <p>No server was created.</p>
+</ng-template>
+
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverUsername"
+  placeholder="Enter username...">
+<p>{{ serverUsername }}</p>
+
+<button
+  [disabled]="serverUsername.length == 0"
+  (click)="serverUsername = ''">Click me to reset username.
+</button>
+
+<hr>
+
+<button (click)="buttonClicks.push(buttonClicks.length + 1)">Display Details</button>
+<div class="container" *ngIf="buttonClicks.length">
+  <p>Secret paragraph has appeared!</p>
+  <p
+    *ngFor="let click of buttonClicks; let i = index"
+    [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
+    [ngClass]="{online: i >= 5}"
+  >({{i + 1}}) Button was clicked at <b>{{date}}</b>.</p>
+</div>
+
+<app-server *ngFor="let server of servers"></app-server>
