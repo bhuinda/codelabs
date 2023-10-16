@@ -1,0 +1,7 @@
+<div class="row">
+  <button class="btn btn-success" (click)="onGameStart()">Start</button>
+  <button class="btn btn-danger" (click)="onGameStop()">Stop</button>
+</div>
+
+<app-odd *ngFor="let number of oddNumbers; let i = index" [count]="oddNumbers[i]"></app-odd>
+<app-even *ngFor="let number of evenNumbers; let i = index" [count]="evenNumbers[i]"></app-even>
