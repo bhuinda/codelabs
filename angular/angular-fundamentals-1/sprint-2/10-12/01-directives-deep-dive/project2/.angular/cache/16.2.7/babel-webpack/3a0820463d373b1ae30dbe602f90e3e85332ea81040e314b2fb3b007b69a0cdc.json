@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class LoggingService {\n  logStatusChange(status) {\n    console.log('A server status changed, new status: ' + accountStatus);\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
