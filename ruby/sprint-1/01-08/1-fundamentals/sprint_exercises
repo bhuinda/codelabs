@@ -1,0 +1,103 @@
+puts 'Hello, World!'
+
+# 1. Variables
+
+my_name = 'Benjamin Huinda'
+puts(my_name)
+
+# 2. Arithmetic Operators
+
+def rectangle_area(width, length)
+  width * length
+end
+
+puts(rectangle_area(5, 10))
+
+# 3. Conditional Operators & Control Flow
+
+def check_sign(number)
+  if number > 0
+    'positive'
+  elsif number < 0
+    'negative'
+  else
+    'zero'
+  end
+end
+
+puts(check_sign(0))
+
+# 4. Basic Methods
+
+def add(num1, num2)
+  num1 + num2
+end
+
+puts(add(1, 2))
+
+# 5. Testing w/ RSpec (see main_spec.rb)
+
+def multiply(num1, num2)
+  return num1 * num2
+end
+
+# 6. Arrays
+
+my_array = [1, 2, 3, 4, 5]
+
+my_array.each do |i|
+  puts i
+end
+
+# 7. Hashes
+
+alice_hash = {
+  "name" => "Alice",
+  "age" => 30
+}
+
+puts(alice_hash.values)
+
+# 8. Loops & Control Flow
+
+def fizz_buzzer()
+  (1..20).each do |n|
+    if n % 3 == 0 && n % 5 == 0
+      puts "FizzBuzz"
+    elsif n % 3 == 0
+      puts "Fizz"
+    elsif n % 5 == 0
+      puts "Buzz"
+    else
+      puts n
+    end
+  end
+end
+
+fizz_buzzer()
+
+# 9. Super Fizz Buzz
+
+def super_fizz_buzzer()
+  (1..100).each do |number|
+    if number % 3 == 0 && number % 5 == 0 && number % 7 == 0
+      puts "FizzBuzzSuper"
+    elsif number % 3 == 0 && number % 7 == 0
+      puts "FizzSuper"
+    elsif number % 5 == 0 && number % 7 == 0
+      puts "BuzzSuper"
+    elsif number % 3 == 0 && number % 5 == 0
+      puts "FizzBuzz"
+    elsif number % 3 == 0
+      puts "Fizz"
+    elsif number % 5 == 0
+      puts "Buzz"
+    elsif number % 7 == 0
+      puts "Super"
+    else
+      puts number
+    end
+  end
+end
+
+super_fizz_buzzer()
